@@ -61,7 +61,11 @@ const Approach = () => {
     };
 
     return (
-        <section className="py-20 bg-white">
+        <section className="relative py-20 bg-gradient-to-br from-brand-50 to-white overflow-hidden">
+            {/* Decorative top and bottom dividers */}
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent" />
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     variants={containerVariants}
@@ -78,11 +82,14 @@ const Approach = () => {
                     </motion.div>
 
                     {/* Beyond Traditional Therapy */}
-                    <motion.div variants={itemVariants} className="bg-neutral-50 rounded-2xl p-8 md:p-12">
-                        <div className="grid md:grid-cols-2 gap-12">
+                    <motion.div variants={itemVariants} className="bg-neutral-50 rounded-2xl p-8 md:p-12 shadow-md relative overflow-hidden">
+                        {/* Subtle gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-white opacity-30 pointer-events-none" />
+
+                        <div className="grid md:grid-cols-2 gap-12 relative">
                             {approachPoints.map((section, index) => (
                                 <div key={index} className="space-y-6">
-                                    <h3 className="text-2xl font-medium text-neutral-900">
+                                    <h3 className="text-2xl font-medium text-brand-500">
                                         {section.title}
                                     </h3>
                                     <ul className="space-y-4">
@@ -103,7 +110,10 @@ const Approach = () => {
                     </motion.div>
 
                     {/* This is for you section */}
-                    <motion.div variants={itemVariants} className="bg-neutral-50 rounded-2xl p-8 md:p-12">
+                    <motion.div variants={itemVariants} className="bg-neutral-50 rounded-2xl p-8 md:p-12 shadow-md relative overflow-hidden">
+                        {/* Subtle gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-white opacity-30 pointer-events-none" />
+
                         <h3 className="text-2xl font-medium font-bold text-neutral-900 mb-8 text-center">
                             This is for you if:
                         </h3>
