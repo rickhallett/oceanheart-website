@@ -57,28 +57,28 @@ const Journey = () => {
                         <h3 className="text-3xl font-medium text-center text-brand-500 mb-8">
                             What's Possible
                         </h3>
-                        <ul className="space-y-4 text-lg text-neutral-600 text-center">
-                            <li className="flex items-start">
+                        <ul className="space-y-4 text-lg text-neutral-600">
+                            <li className="flex items-center justify-center text-center">
                                 <span className="mr-3 text-brand-500">•</span>
                                 Living from your heart instead of your head
                             </li>
-                            <li className="flex items-start">
+                            <li className="flex items-center justify-center text-center">
                                 <span className="mr-3 text-brand-500">•</span>
                                 Feeling deeply connected to yourself and others
                             </li>
-                            <li className="flex items-start">
+                            <li className="flex items-center justify-center text-center">
                                 <span className="mr-3 text-brand-500">•</span>
                                 Moving through life with natural wisdom
                             </li>
-                            <li className="flex items-start">
+                            <li className="flex items-center justify-center text-center">
                                 <span className="mr-3 text-brand-500">•</span>
                                 Being authentic without apology
                             </li>
-                            <li className="flex items-start">
+                            <li className="flex items-center justify-center text-center">
                                 <span className="mr-3 text-brand-500">•</span>
                                 Finding peace without having to fix yourself
                             </li>
-                            <li className="flex items-start">
+                            <li className="flex items-center justify-center text-center">
                                 <span className="mr-3 text-brand-500">•</span>
                                 Experiencing life vividly, directly, fully
                             </li>
