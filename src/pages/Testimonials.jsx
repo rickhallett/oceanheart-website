@@ -4,92 +4,127 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './Testimonials.css';
 
-const reviews = [
+const trustpilotReviews = [
     {
-        name: "ROBERT WARWICK",
-        location: "GB",
-        rating: 5,
-        date: "19 Oct 2024",
-        content: "Rick is fantastic. I've been through wellbeing several times, all the previous times the practitioner were good. But Rick went down a different route to previous practitioners, instead of going down a medical route, he focused on a self acceptance and spiritual route, which fitted in well my faith (Christian). Before my first session I had a picture of a middle ages guy in a shirt and tie, Rick could not be further from that, here was a guy in a t-shirt with the sleeves cut off, muscles, more like a cool surfer guy. Me and Rick connected straight away, he made me feel relaxed and at ease. I want to thank Rick so much, because he has helped me find myself again. Having been discharged from wellbeing today, I can honestly say that though I'm happy about being discharged, I'm also sad that I won't get to have my weekly chats with him.",
-        date: "18 October 2024"
+        "name": "ROBERT WARWICK",
+        "location": "GB",
+        "rating": 5,
+        "date": "2024-10-19T03:27:40.000Z",
+        "title": "Rick is fantastic.",
+        "content": "Rick is fantastic.I've been through wellbeing several times, all the previous times the practitioner were good.But Rick went down a different route to previous practitioners, instead of going down a medical route, he focused on a self acceptance and spiritual route, which fitted in well my faith (Christian).Before my first session I had a picture of a middle ages guy in a shirt and tie, Rick could not be further from that, here was a guy in a t-shirt with the sleeves cut off, muscles, more like a cool surfer guy.Me and Rick connected straight away, he made me feel relaxed and at ease.I want to thank Rick so much, because he has helped me find myself again.Having been discharged from wellbeing today, I can honestly say that though I'm happy about being discharged, I'm also sad that I won't get to have my weekly chats with him.",
+        "isVerified": false,
+        "date": "18 October 2024"
     },
     {
-        name: "Kate",
-        location: "GB",
-        rating: 5,
-        date: "20 Oct 2024",
-        content: "Phenomenal CBT Therapist! Richard is a kind, compassionate and empathetic therapist who instinctively knows how to put you at ease. Having never done therapy before, I started the process with all kinds of doubt, fear and trepidation – almost looking for the nearest exit before I’d begun! Yet, guided by Richard’s warmth and humour, all my scepticism quickly melted away. I soon felt the healing power of being able to talk freely in a safe space. A great listener, Richard was able to make fantastic suggestions for books, diaries and other tools which I found invaluable in between sessions as a means of reflection and personal growth. Ultimately, and after only a few sessions, I now feel like me again; ready to move forward with an open heart and a sense of optimism for the future, safe in the knowledge that I am better equipped to deal with life’s challenges. Richard is a truly gifted therapist with a generous spirit. I sincerely hope that others allow themselves the opportunity and privilege of collaborating with him on their own personal journey. I honestly can’t recommend him highly enough! Thank you so much Richard for all your help and support.",
+        "name": "Kate",
+        "location": "GB",
+        "rating": 5,
+        "date": "2024-10-20T15:43:25.000Z",
+        "title": "Phenomenal CBT Therapist!",
+        "content": "Richard is a kind, compassionate and empathetic therapist who instinctively knows how to put you at ease.  Having never done therapy before, I started the process with all kinds of doubt, fear and trepidation – almost looking for the nearest exit before I’d begun! Yet, guided by Richard’s warmth and humour, all my scepticism quickly melted away.I soon felt the healing power of being able to talk freely in a safe space. A great listener, Richard was able to make fantastic suggestions for books, diaries and other tools which I found invaluable in between sessions as a means of reflection and personal growth.Ultimately, and after only a few sessions, I now feel like me again; ready to move forward with an open heart and a sense of optimism for the future, safe in the knowledge that I am better equipped to deal with life’s challenges. Richard is a truly gifted therapist with a generous spirit. I sincerely hope that others allow themselves the opportunity and privilege of collaborating with him on their own personal journey.I honestly can’t recommend him highly enough! Thank you so much Richard for all your help and support.",
+        "isVerified": true,
+        "date": "20 October 2024"
     },
     {
-        name: "Ali Jarvis",
-        location: "GB",
-        rating: 5,
-        date: "16 Sept 2024",
-        content: "I cannot recommend Richard highly enough. I was referred for therapy to address my anxiety which was having a massively negative impact on my life. Whilst I was not an all out sceptic of holistic therapies, at the start I struggled to see how this therapy could or would be able to help me. With Richard’s guidance and wonderfully wicked sense of humour, the onion of futile resistance has been well and truly smashed! Thanks to Richard I have my life back and feel suitably equipped to continue improving every day with the safety net of being able to reach out to Richard in the future should I need to.",
+        "name": "Ali Jarvis",
+        "location": "GB",
+        "rating": 5,
+        "date": "2024-09-16T08:33:21.000Z",
+        "title": "I cannot recommend Richard highly…",
+        "content": "I cannot recommend Richard highly enough.  I was referred for therapy to address my anxiety which was having a massively negative impact on my life.Whilst I was not an all out sceptic of holistic therapies, at the start I struggled to see how this therapy could or would be able to help me.  With Richard’s guidance and wonderfully wicked sense of humour, the onion of futile resistance has been well and truly smashed!  Thanks to Richard I have my life back and feel suitably equipped to continue improving every day with the safety net of being able to reach out to Richard in the future should I need to.",
+        "isVerified": false,
+        "date": "13 September 2024"
     },
     {
-        name: "Lydia McManus",
-        location: "GB",
-        rating: 5,
-        date: "30 Aug 2024",
-        content: "I honestly cannot recommend Richard enough!! I had 8 sessions all together and I can feel so much of a difference. I have gained a lot from my sessions, from insights, tools, recommendations and more. There have been many occasions where I have experienced light bulb moments that have been life changing and make me understand so much. Richard is understanding, empathetic and has a calming presence. He also has a great sense of humour that has put me at ease from my first session, being able to laugh throughout sessions is something I was so grateful for. Richard creates a safe environment in which you can truly open up and gain a lot from. Thank you for everything!",
+        "name": "Lydia McManus",
+        "location": "GB",
+        "rating": 5,
+        "date": "2024-08-30T13:30:36.000Z",
+        "title": "I honestly cannot recommend Richard…",
+        "content": "I honestly cannot recommend Richard enough!! I had 8 sessions all together  and I can feel so much of a difference. I have gained a lot from my sessions, from insights, tools, recommendations and more. There have been many occasions where I have experienced light bulb moments that have been life changing and make me understand so much. Richard is understanding, empathetic and has a calming presence. He also has a great sense of humour that has put me at ease from my first session, being able to laugh throughout sessions is something I was so grateful for. Richard creates a safe environment in which you can truly open up and gain a lot from. Thank you for everything!",
+        "isVerified": false,
+        "date": "30 August 2024"
     },
     {
-        name: "Lauren Rebecca",
-        location: "GB",
-        rating: 5,
-        date: "10 Aug 2024",
-        content: "I was referred to Richard for therapy for my OCD. I found his guidance really helpful in explaining concepts for ACT therapy and allowing me to work on my symptoms. Even though some sessions were tough for me mentally, Richard always found a way to make the concepts relatable or a way to divert the conversation to help me calm down (and mostly laugh) before returning to the topic.",
-        },
-    {
-        name: "Sarah",
-        location: "GB",
-        rating: 5,
-        date: "3 Jun 2024",
-        content: "The whole theory behind does it help!! Well absolutely, yes! Richard has been an enormous help, guidance and support throughout my sessions and comes highly recommended by myself and others no doubt. I will carry on believing in myself and trusting each step I take is a plan to strive to achieve my potential that I had lost and thanks to Richard I have now and will continue gaining. Thank you, wholeheartedly.",
+        "name": "Lauren Rebecca",
+        "location": "GB",
+        "rating": 5,
+        "date": "2024-08-10T13:13:18.000Z",
+        "title": "Highly recommended therapist",
+        "content": "I was referred to Richard for therapy for my OCD. I found his guidance really helpful in explaining concepts for ACT therapy and allowing me to work on my symptoms. Even though some sessions were tough for me mentally, Richard always found a way to make the concepts relatable or a way to divert the conversation to help me calm down (and mostly laugh) before returning to the topic.",
+        "isVerified": false,
+        "date": "10 August 2024"
     },
     {
-        name: "Nafiya",
-        location: "GB",
-        rating: 5,
-        date: "4 Jun 2024",
-        content: "Many people have told me therapy is a waste of time and I grew up believing in this! Since starting my sessions with Richard, I have found the confident , strong powerful woman I forgot I was especially during my most anxious times. I felt extremely comfortable sharing feelings and thoughts, I felt I could benefit from many strategies we spoke about, he was very professional yet friendly enough to crack a few jokes which was fantastic. Thank you Richard!",
+        "name": "Sarah",
+        "location": "GB",
+        "rating": 5,
+        "date": "2024-06-03T19:51:02.000Z",
+        "title": "The whole theory behind does healing therapy help!! Yes.",
+        "content": "The whole theory behind does it help!!Well absolutely, yes!Richard has been an enormous help, guidance and support throughout my sessions and comes highly recommended by myself and others no doubt.I will carry on believing in myself and trusting each step I take is a plan to strive to achieve my potential that I had lost and thanks to Richard I have now and will continue gaining.Thank you, wholeheartedly.",
+        "isVerified": false,
+        "date": "03 June 2024"
     },
     {
-        name: "Anonymous",
-        location: "GB",
-        rating: 5,
-        date: "7 Jun 2024",
-        content: "Richard’s guidance, support and insights really resonate. You can take something out of every session, which in turn helps you make gradual changes in your life. In other words, a life-changing experience. Thank you so much!",
-        },
-    {
-        name: "Aureliana Enache",
-        location: "GB",
-        rating: 5,
-        date: "4 Jun 2024",
-        content: "Rick is a very gifted, empathetic and highly professional therapist. A meditator, so the holding and advice comes from an intuitive, spiritual space. If you want to discuss situations in depth, clear out emotions at the somatic level or find better life strategies, definitely book with Rick Hallett.",
+        "name": "Nafiya",
+        "location": "GB",
+        "rating": 5,
+        "date": "2024-06-04T07:33:21.000Z",
+        "title": "Letting the bee in the room exist 🐝",
+        "content": "Many people have told me therapy is a waste of time and I grew up believing in this! Since starting my sessions with Richard, I have found the confident , strong powerful women I forgot I was especially during my most anxious times.  I felt extremely comfortable sharing feelings and thoughts, I felt I could benefit from many strategies we spoke about, he was very professional yet friendly enough to crake a few jokes which was fantastic. Thank you Richard !",
+        "isVerified": false,
+        "date": "04 June 2024"
     },
     {
-        name: "Mary",
-        location: "GB",
-        rating: 5,
-        date: "8 Jun 2024",
-        content: "I have benefitted immensely from my sessions with Richard and feel lighter in the mind, body, and soul. He is a professional and a well-mannered therapist, who was able to create a safe space emotionally and mentally so I could open up and speak. Especially as a trauma-informed therapist; he was sympathetic, empathetic and non-judgemental in his approach. In this manner we proceeded through the traumas that can leave one feeling frozen. Furthermore, experiencing symptoms such as: emotional and physical pain throughout the body; depression, anxiety, insomnia, numbness, disassociation, isolation, fear, heartbreak, grief and many more indicators. Richard aided me through the darkness to a place where one can see light, he is a source for good change guiding one within, through some of the darkest wounds; I would not have favored to face alone, and did not know how to. He aided me with psychology terms and knowledge to explain my states and what was happening—which is essence was a therapeutic and educational process... do trust the process.",
-        },
-    {
-        name: "Barry J Wale",
-        location: "GB",
-        rating: 5,
-        date: "3 Jun 2024",
-        content: "My experience talking to Richard was truly enlightening. Together we found a way forward, and I am deeply in his debt. An intelligent listener with great compassion and understanding of the human mind.",
-            },
-    {
-        name: "alfie",
-        location: "GB",
-        rating: 5,
-        date: "15 Aug 2024",
-        content: "Having come to Richard with dark intrusive thoughts about harming other loved ones and a truly crazy high score of OCD after nearly 2 years of suffering with the symptoms of this sometimes needing to be scared of even the most basic daily tasks, spending the 6 sessions with Richard working on where these stem from, how to overcome these and break these down, what these truly mean and how meditation and workbooks can make a huge difference when suffering from Harm OCD, Richard and myself have worked session by session to channel this into where I am today with little to no strange thoughts these days, and life’s a much brighter place to be. Sessions have been entertaining as well as insightful, I really could not have done this without Richard. By far the best therapist I have had coming off the back of CBT and reconstructive thought therapy, doing the ERP therapy with Richard really has made such a difference, could not recommend Richard highly enough and such a great guy!",
+        "name": "Anonymous",
+        "location": "GB",
+        "rating": 5,
+        "date": "2024-06-07T10:15:46.000Z",
+        "title": "Really resonates",
+        "content": "Richard’s guidance, support and insights really resonate. You can take something out of every session, which in turn helps you make gradual changes in your life. In other words, a life-changing experience. Thank you so much!",
+        "isVerified": false,
+        "date": "05 June 2024"
     },
+    {
+        "name": "Aureliana Enache",
+        "location": "GB",
+        "rating": 5,
+        "date": "2024-06-04T21:38:55.000Z",
+        "title": "Incredible CBT therapist",
+        "content": "Rick is a very gifted, empatic and highly profesional therapist. A meditator, so the holding and advice comes from an intuitive, spiritual space. If you want to discuss situations in depth, clear out emotions at somatic level or find better  life strategies, definetely book with Rick Hallett.",
+        "isVerified": false,
+        "date": "04 June 2024"
+    },
+    {
+        "name": "Mary",
+        "location": "GB",
+        "rating": 5,
+        "date": "2024-06-07T23:29:36.000Z",
+        "title": "Trusting The Process: From Darkness To Light",
+        "content": "I have benefitted immensely from my sessions with Richard and feel lighter in the mind, body, and soul. He is a professional and a well mannered therapist, who was able to create a safe space emotionally and mentally so I could open up and speak. Especially as a trauma-informed therapist; he was sympathetic, empathic and non-judgemental in his approach.  In this manner we proceeded through the traumas that can leave one feeling frozen.  Furthermore, experiencing symptoms such as: emotional and physical pain throughout the body; depression, anxiety, insomnia, numbness, disassociation, isolation, fear, heartbreak, grief and many more indicators.  Richard aided me through the darkness to a place where one can see light, he is a source for good change guiding one within, through some of the darkest wounds; I would not have favored to face alone, and did not know how to. He aided me with psychology terms and knowledge to explain my states and what was happening—which is essence was a therapeutic and educational process... do trust the process.   I am grateful that I was put through to a therapist who could resonate with my traumas.  After each session I was able to go out into the world like my normal self and carry on with my duties—I experienced the positive shift within.Thank you Richard, I do believe you were a God-send, God bless.",
+        "isVerified": false,
+        "date": "07 June 2024"
+    },
+    {
+        "name": "Barry J Wale",
+        "location": "GB",
+        "rating": 5,
+        "date": "2024-06-03T15:13:48.000Z",
+        "title": "Enlightening",
+        "content": "My experience talking to Richard was truly enlightening.  Together we found a way forward, and I am deeply in his debt.  An intelligent listener with great compassion and understanding of the human mind.",
+        "isVerified": false,
+        "date": "14 March 2024"
+    },
+    {
+        "name": "alfie",
+        "location": "GB",
+        "rating": 5,
+        "date": "2024-08-15T13:00:59.000Z",
+        "title": "Incredible Therapist with a great personality",
+        "content": "Having come to Richard with Dark intrusive thoughts about harming other loved ones and a truly crazy high score of OCD after nearly 2 years of suffering with the symptoms of this sometimes needing to be scared of even the most basic daily tasks, Spending the 6 sessions with Richard working on where these stem from, How to overcome these and break these down, What these truly mean and How Meditation and Workbooks can make a huge difference when suffering from Harm Ocd, Richard and Myself Have worked sessions by session to channel this into where i am today with little to no strange thoughts these days, And lives a much brighter place to be. Sessions have been Entertaining as well as inciteful i really could not have done this without Richard by far the best therapist i have had coming off the back of CBT and reconstructive thought therapy, Doing the ERP Therapy with Richard really has made such a difference, Could not Recommend Richard Highly enough and such a great guy !!",
+        "isVerified": false,
+        "date": "15 August 2024"
+    }
 ]
 
 const googleReviews = [
@@ -136,7 +171,7 @@ const responsive = {
 };
 
 const Testimonials = () => {
-    const allReviews = [...reviews, ...googleReviews];
+    const allReviews = [...googleReviews, ...trustpilotReviews];
     return (
         <div className="work-together">
             {/* <h2>Fellow Traveller Testimonials</h2> */}
@@ -156,7 +191,7 @@ const Testimonials = () => {
                             — {review.name}, <em>{review.date}</em>
                         </p>
                         <a
-                            href={review.link}
+                            href="https://uk.trustpilot.com/review/richardhallett.net"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="read-more-link"

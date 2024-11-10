@@ -6,6 +6,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Your Journey', href: '/journey' },
   { name: 'Our Approach', href: '/approach' },
+  { name: 'Blog', href: 'https://oceanheart-ai.ghost.io' },
   { name: 'Work Together', href: '/work-together' },
 ];
 
