@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import Testimonials from '../../pages/Testimonials';
-import Sandbox from '../../pages/Sandbox';
 
 const WorkTogether = () => {
     const containerVariants = {
