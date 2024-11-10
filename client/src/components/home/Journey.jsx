@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import oceanheartImage from '../../assets/oceanheart-raw.jpeg';
+import oceanheartImage from '/oceanheart-raw.jpeg';
 
 const Journey = () => {
     const containerVariants = {

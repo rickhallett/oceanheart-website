@@ -12,7 +12,7 @@ const Reviews = ({ domain, summary = false }) => {
         const fetchReviews = async () => {
             try {
                 setLoading(true);
-                const response = await fetch(`http://localhost:3001/api/reviews/${domain}`);
+                const response = await fetch('https://oceanheart-website-serverless.vercel.app/api');
                 const data = await response.json();
                 if (data.success) {
                     setReviews(data.reviews);
@@ -41,6 +41,9 @@ const Reviews = ({ domain, summary = false }) => {
     }
 
     if (error) {
+        if (process.env.NODE_ENV === 'production') {
+            return null;
+        }
         return (
             <div className="p-4 text-red-600 bg-red-50 rounded-lg">
                 Error: {error}

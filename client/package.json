@@ -7,10 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "node server/index.js",
-    "client": "react-scripts start"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
@@ -24,10 +21,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.28.0",
     "tailwind-merge": "^2.5.4",
-    "axios": "^1.6.0",
-    "cheerio": "^1.0.0-rc.12",
-    "express": "^4.18.2",
-    "express-rate-limit": "^7.1.0"
+    "axios": "^1.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

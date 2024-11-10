@@ -1,38 +1,26 @@
-// server/getTrustPilotReview.js
-import express from 'express';
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 import cors from 'cors';
-import rateLimit from 'express-rate-limit';
 
-const app = express();
-const port = process.env.PORT || 3001;
+// Helper function to enable CORS
+const allowCors = fn => async (req, res) => {
+  res.setHeader('Access-Control-Allow-Credentials', true);
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'https://oceanheart-website-client-v2.vercel.app');
 
-// Debug logging middleware
-app.use((req, res, next) => {
-    console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
-    next();
-});
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
 
-// Enable CORS
-app.use(cors());
-console.log('CORS enabled');
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
 
-// Rate limiting
-const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 100
-});
-
-app.use(limiter);
-app.use(express.json());
+  return await fn(req, res);
+};
 
 const parseReviews = ($) => {
-    console.log('Starting to parse reviews...');
     const reviews = [];
-    
-    const reviewElements = $('.styles_reviewCard__9HxJJ');
-    console.log(`Found ${reviewElements.length} review elements`);
     
     $('.styles_reviewCard__9HxJJ').each((_, element) => {
         if (!$(element).find('.styles_reviewCardInner__EwDq2').length) {
@@ -85,7 +73,6 @@ const parseReviews = ($) => {
         });
     });
     
-    console.log(`Successfully parsed ${reviews.length} reviews`);
     return reviews;
 };
 
@@ -93,91 +80,46 @@ const calculateStats = (reviews) => {
     const avgRating = reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length;
     const verifiedCount = reviews.filter(review => review.isVerified).length;
     
-    const stats = {
+    return {
         totalReviews: reviews.length,
         averageRating: Number(avgRating.toFixed(1)),
         verifiedReviews: verifiedCount,
         verifiedPercentage: Number(((verifiedCount / reviews.length) * 100).toFixed(1))
     };
-    
-    console.log('Calculated stats:', stats);
-    return stats;
 };
 
-// Health check endpoint
-app.get('/api/health', (req, res) => {
-    res.json({ status: 'ok', timestamp: new Date().toISOString() });
-});
+// Main handler function
+async function handler(req, res) {
+    const domain = "richardhallett.net"
 
-app.get('/api/reviews/:domain', async (req, res) => {
-    console.log(`Fetching reviews for domain: ${req.params.domain}`);
-    
     try {
-        const { domain } = req.params;
         const url = `https://www.trustpilot.com/review/${domain}`;
         
-        console.log(`Fetching URL: ${url}`);
         const response = await axios.get(url, {
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
             }
         });
         
-        console.log('Successfully fetched HTML');
         const $ = cheerio.load(response.data);
-        
         const reviews = parseReviews($);
         const stats = calculateStats(reviews);
         
-        console.log(`Sending response with ${reviews.length} reviews`);
-        res.json({
+        return res.json({
             success: true,
             stats,
             reviews
         });
         
     } catch (error) {
-        console.error('Error in /api/reviews/:domain:', error);
-        res.status(500).json({
+        return res.status(500).json({
             success: false,
             error: 'Error fetching or parsing reviews',
             message: error.message,
             stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
         });
     }
-});
+}
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-    console.error('Global error handler:', err);
-    res.status(500).json({
-        success: false,
-        error: 'Internal server error',
-        message: err.message,
-        stack: process.env.NODE_ENV === 'development' ? err.stack : undefined
-    });
-});
-
-// Handle uncaught exceptions
-process.on('uncaughtException', (err) => {
-    console.error('Uncaught Exception:', err);
-    process.exit(1);
-});
-
-// Handle unhandled promise rejections
-process.on('unhandledRejection', (err) => {
-    console.error('Unhandled Rejection:', err);
-    process.exit(1);
-});
-
-const server = app.listen(port, () => {
-    console.log(`Review server running on port ${port}`);
-    console.log(`Health check available at: http://localhost:${port}/api/health`);
-    console.log(`Example API call: http://localhost:${port}/api/reviews/richardhallett.net`);
-});
-
-// Handle server errors
-server.on('error', (err) => {
-    console.error('Server error:', err);
-    process.exit(1);
-});
+// Export the handler with CORS enabled
+export default allowCors(handler); 
