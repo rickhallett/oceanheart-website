@@ -94,7 +94,9 @@ const reviews = [
 
 const googleReviews = [
     {
-        author: 'Jacob Lagat',
+        name: 'Jacob Lagat',
+        location: 'GB',
+        rating: 5,
         date: '2 days ago',
         title: 'Life-changing experience.',
         content: `I’m posting this review using a throwaway account. My identity isn’t important. What’s important is that Richard quite literally changed my life.
@@ -111,7 +113,9 @@ const googleReviews = [
         link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUMzemJUeThnRRAB!2m1!1s0x0:0x451935ba377f3a26!3m1!1s2@1:CIHM0ogKEICAgIC3zbTy8gE%7CCgsI_rW1uQYQ6LyneA%7C?hl=en-GB',
     },
     {
-        author: 'Rebecca O',
+        name: 'Rebecca O',
+        location: 'GB',
+        rating: 5,
         date: '3 weeks ago',
         title: 'A truly exceptional therapist.',
         content: `I think the first thing I want to get out of the way is how easy you can misjudge someone purely based on their aesthetic. I'm ashamed to say that I did this when I was first told Rick would be my therapist (NHS). I saw his exterior, assigned some nonsense narrative based on my own personal, unresolved issues and considered them to be fact. Before our first session, I was genuinely wary and a little bit anxious. Why say all of this? I say it so that you don't do what I initially did and potentially end up missing out on an opportunity to really explore yourself and get to the heart of what is actually going on.
@@ -124,54 +128,6 @@ const googleReviews = [
         link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNYbTRucFZnEAE!2m1!1s0x0:0x451935ba377f3a26!3m1!1s2@1:CIHM0ogKEICAgICXm4npVg%7CCgsIxMLVuAYQ6J7uOg%7C?hl=en-GB',
     },
 ];
-
-
-const CustomPrevArrow = ({ onClick, ...rest }) => {
-    const {
-        carouselState: { currentSlide },
-    } = rest;
-
-    return (
-        <button onClick={() => onClick()} aria-label="Previous Slide">
-            &lt;
-        </button>
-    );
-};
-
-const CustomNextArrow = ({ onClick, ...rest }) => {
-    const {
-        carouselState: { currentSlide },
-    } = rest;
-
-    return (
-        <button onClick={() => onClick()} aria-label="Next Slide">
-            &gt;
-        </button>
-    );
-};
-
-const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-    const {
-        carouselState: { currentSlide },
-    } = rest;
-    return (
-        <div className="carousel-button-group" style={{ position: 'absolute', top: '50%', width: '100%' }}>
-            <button
-                className={currentSlide === 0 ? 'disable' : ''}
-                onClick={() => previous()}
-                aria-label="Previous Slide"
-            >
-                &lt; {/* Custom left arrow */}
-            </button>
-            <button onClick={() => next()} aria-label="Next Slide">
-                &gt; {/* Custom right arrow */}
-            </button>
-            <button onClick={() => goToSlide(currentSlide + 1)} aria-label="Go to Next Slide">
-                Go to any slide
-            </button>
-        </div>
-    );
-};
 
 const responsive = {
     desktop: { breakpoint: { max: 3000, min: 1024 }, items: 3 },

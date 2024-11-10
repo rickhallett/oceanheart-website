@@ -55,7 +55,7 @@ const WorkTogether = () => {
                                 <p className="text-md mb-4">£240/month</p>
                                 <p className="text-gray-600 mb-6">Once a week hourly sessions</p>
                                 <button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition">
-                                    Book Now
+                                    <a href="https://monzo.com/pay/r/oceanheartai-ltd_SG0tlfRbVhpmU1">Book Now</a>
                                 </button>
                             </div>
                             <div className="bg-white shadow-lg rounded-lg p-6 w-full md:w-80 text-center">
@@ -63,15 +63,15 @@ const WorkTogether = () => {
                                 <p className="text-md mb-4">£480/month</p>
                                 <p className="text-gray-600 mb-6">Twice a week hourly sessions</p>
                                 <button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition">
-                                    Book Now
+                                    <a href="https://monzo.com/pay/r/oceanheartai-ltd_hJwCZvZTHC4mp0" target="_blank" rel="noopener noreferrer">Book Now</a>
                                 </button>
                             </div>
                             <div className="bg-white shadow-lg rounded-lg p-6 w-full md:w-80 text-center">
-                                <h3 className="text-1xl font-semibold mb-4">OceanHeart Unlimited</h3>
+                                <h3 className="text-1xl font-semibold mb-4">OceanHeart Elite</h3>
                                 <p className="text-md mb-4">Custom Quote</p>
                                 <p className="text-gray-600 mb-6">Go deeper into your journey with tailored sessions</p>
                                 <button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition">
-                                    Contact for Quote
+                                    <a href="mailto:kai@oceanheart.ai?subject=OceanHeart Elite Quote Request" target="_blank" rel="noopener noreferrer">Contact for Quote</a>
                                 </button>
                             </div>
                         </div>
