@@ -4,7 +4,7 @@ import { Heart } from 'lucide-react';
 const navigation = {
   main: [
     { name: 'Home', href: '/' },
-    { name: 'Your Journey', href: '/journey' },
+    { name: 'My Journey', href: '/journey' },
     { name: 'Our Approach', href: '/approach' },
     { name: 'Work Together', href: '/work-together' },
     { name: 'Blog', href: 'https://oceanheart-ai.ghost.io' },
@@ -18,6 +18,13 @@ const navigation = {
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <footer className="bg-white border-t border-neutral-100 mt-auto">
@@ -46,6 +53,7 @@ const Footer = () => {
                 <li key={item.name}>
                   <Link
                     to={item.href}
+                    onClick={scrollToTop}
                     className="text-neutral-600 hover:text-brand-500 text-sm transition-colors duration-200"
                   >
                     {item.name}
@@ -87,6 +95,7 @@ const Footer = () => {
                 <Link
                   key={item.name}
                   to={item.href}
+                  onClick={scrollToTop}
                   className="text-sm text-neutral-500 hover:text-brand-500 transition-colors duration-200"
                 >
                   {item.name}

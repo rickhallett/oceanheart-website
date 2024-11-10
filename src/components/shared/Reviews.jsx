@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Star, Verified, Loader2, ChevronDown } from 'lucide-react';
+import { Star, Verified, Loader2, ChevronDown, ExternalLink } from 'lucide-react';
 
 const Reviews = ({ domain, summary = false }) => {
     const [reviews, setReviews] = useState([]);
@@ -95,7 +95,19 @@ const Reviews = ({ domain, summary = false }) => {
                 {reviews[0] && (
                     <div className="mt-4 pt-4 border-t border-gray-100">
                         <div className="flex items-center gap-2 text-sm">
-                            <span className="font-medium">{reviews[0].name}</span>
+                            {reviews[0].profileUrl ? (
+                                <a 
+                                    href={reviews[0].profileUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-medium text-blue-600 hover:text-blue-800 flex items-center gap-1"
+                                >
+                                    {reviews[0].name}
+                                    <ExternalLink className="w-3 h-3" />
+                                </a>
+                            ) : (
+                                <span className="font-medium">{reviews[0].name}</span>
+                            )}
                             <span className="text-gray-500">· {reviews[0].location}</span>
                         </div>
                         <p className="text-sm text-gray-600 mt-1 line-clamp-2">
@@ -167,7 +179,20 @@ const Reviews = ({ domain, summary = false }) => {
                             <div className="flex items-start justify-between">
                                 <div>
                                     <div className="flex items-center gap-2">
-                                        <span className="font-medium">{review.name}</span>
+                                        {review.profileUrl ? (
+                                            <a 
+                                                href={review.profileUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="font-medium text-blue-600 hover:text-blue-800 flex items-center gap-1"
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                {review.name}
+                                                <ExternalLink className="w-3 h-3" />
+                                            </a>
+                                        ) : (
+                                            <span className="font-medium">{review.name}</span>
+                                        )}
                                         <span className="text-gray-500">· {review.location}</span>
                                         {review.isVerified && (
                                             <span className="flex items-center gap-1 text-green-600">
@@ -190,9 +215,22 @@ const Reviews = ({ domain, summary = false }) => {
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <div className="text-sm text-gray-500">
-                                        {new Date(review.date).toLocaleDateString()}
-                                    </div>
+                                    {review.reviewUrl ? (
+                                        <a 
+                                            href={review.reviewUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-sm text-gray-500 hover:text-blue-600 flex items-center gap-1"
+                                            onClick={(e) => e.stopPropagation()}
+                                        >
+                                            {new Date(review.date).toLocaleDateString()}
+                                            <ExternalLink className="w-3 h-3" />
+                                        </a>
+                                    ) : (
+                                        <div className="text-sm text-gray-500">
+                                            {new Date(review.date).toLocaleDateString()}
+                                        </div>
+                                    )}
                                     <ChevronDown 
                                         className={`w-5 h-5 transition-transform ${
                                             openReviews.has(index) ? 'rotate-180' : ''
@@ -208,7 +246,7 @@ const Reviews = ({ domain, summary = false }) => {
                                 {openReviews.has(index) ? review.content : previewContent}
                                 {isLongContent && !openReviews.has(index) && (
                                     <span 
-                                        className="text-blue-500 ml-1"
+                                        className="text-blue-500 ml-1 hover:text-blue-700"
                                         onClick={(e) => {
                                             e.preventDefault();
                                             e.stopPropagation();

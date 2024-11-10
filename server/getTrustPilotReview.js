@@ -39,7 +39,18 @@ const parseReviews = ($) => {
             return;
         }
         
-        const name = $(element).find('[data-consumer-name-typography]').text().trim() || 'Anonymous';
+        // Get reviewer name and profile link
+        const profileElement = $(element).find('[data-consumer-profile-link]');
+        const name = profileElement.find('[data-consumer-name-typography]').text().trim() || 'Anonymous';
+        const profileUrl = profileElement.attr('href') || null;
+        // Convert relative URL to absolute URL if it exists
+        const fullProfileUrl = profileUrl ? `https://uk.trustpilot.com${profileUrl}` : null;
+        
+        // Get review link
+        const reviewLinkElement = $(element).find('[data-review-title-typography]').closest('a');
+        const reviewUrl = reviewLinkElement.attr('href') || null;
+        const fullReviewUrl = reviewUrl ? `https://uk.trustpilot.com${reviewUrl}` : null;
+        
         const location = $(element).find('[data-consumer-country-typography] span').text().trim() || 'Unknown';
         const ratingImg = $(element).find('.star-rating_medium__iN6Ty img');
         const rating = ratingImg.length ? 
@@ -62,6 +73,8 @@ const parseReviews = ($) => {
             
         reviews.push({
             name,
+            profileUrl: fullProfileUrl,
+            reviewUrl: fullReviewUrl,
             location,
             rating,
             date,
