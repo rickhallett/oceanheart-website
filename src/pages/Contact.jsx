@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from 'emailjs-com';
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -9,6 +10,15 @@ const ContactPage = () => {
         message: ''
     });
     const [submitted, setSubmitted] = useState(false);
+
+    const sendEmail = (e) => {
+        emailjs.send('service_wwhpzka', 'template_7uozu1o', formData, '3CEAnBnzDmM9Y35nG')
+            .then((result) => {
+                console.log('SUCCESS!', result.status, result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    }
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -20,10 +30,7 @@ const ContactPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Placeholder for your form submission logic
-        console.log('Form data submitted:', formData);
-
-        // Replace the form with a thank you message
+        sendEmail();
         setSubmitted(true);
     };
 
