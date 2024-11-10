@@ -3,6 +3,7 @@ import Layout from './components/layout/Layout'
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom'
 import Home from './pages/Home'
 import Approach from './components/home/Approach'
+import Journey from './components/home/Journey'
 import './styles/index.css'
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/journey" element={<div className="p-8">Journey Page</div>} />
+          <Route path="/journey" element={<Journey />} />
           <Route path="/approach" element={<Approach />} />
           <Route path="/work-together" element={<div className="p-8">Work Together Page</div>} />
           <Route path="/contact" element={<div className="p-8">Contact Page</div>} />
