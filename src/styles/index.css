@@ -1,0 +1,32 @@
+/* src/styles/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-white text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  
+  .heading-1 {
+    @apply text-4xl sm:text-5xl md:text-6xl font-serif font-bold;
+  }
+  
+  .heading-2 {
+    @apply text-3xl sm:text-4xl md:text-5xl font-serif font-bold;
+  }
+  
+  .paragraph {
+    @apply text-lg text-gray-600;
+  }
+}
