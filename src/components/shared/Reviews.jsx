@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Star, Verified, Loader2 } from 'lucide-react';
+import { Star, Verified, Loader2, ChevronDown } from 'lucide-react';
 
 const Reviews = ({ domain, summary = false }) => {
     const [reviews, setReviews] = useState([]);
     const [stats, setStats] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [openReviews, setOpenReviews] = useState(new Set());
 
     useEffect(() => {
         const fetchReviews = async () => {
@@ -140,48 +141,95 @@ const Reviews = ({ domain, summary = false }) => {
 
             {/* Reviews List */}
             <div className="space-y-4">
-                {reviews.map((review, index) => (
-                    <div key={index} className="bg-white rounded-lg shadow-sm p-6">
-                        <div className="flex items-start justify-between">
-                            <div>
+                {reviews.map((review, index) => {
+                    const previewContent = review.content.slice(0, 100) + (review.content.length > 100 ? '...' : '');
+                    const isLongContent = review.content.length > 100;
+                    
+                    return (
+                    <div 
+                        key={index} 
+                        className="bg-white rounded-lg shadow-sm p-2"
+                    >
+                        <button
+                            onClick={() => {
+                                setOpenReviews(prev => {
+                                    const newSet = new Set(prev);
+                                    if (newSet.has(index)) {
+                                        newSet.delete(index);
+                                    } else {
+                                        newSet.add(index);
+                                    }
+                                    return newSet;
+                                });
+                            }}
+                            className="w-full text-left p-6 cursor-pointer"
+                        >
+                            <div className="flex items-start justify-between">
+                                <div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="font-medium">{review.name}</span>
+                                        <span className="text-gray-500">· {review.location}</span>
+                                        {review.isVerified && (
+                                            <span className="flex items-center gap-1 text-green-600">
+                                                <Verified className="w-4 h-4" />
+                                                <span className="text-sm">Verified</span>
+                                            </span>
+                                        )}
+                                    </div>
+                                    <div className="flex mt-2">
+                                        {[...Array(5)].map((_, i) => (
+                                            <Star
+                                                key={i}
+                                                className={`w-4 h-4 ${
+                                                    i < review.rating
+                                                        ? 'text-yellow-400 fill-yellow-400'
+                                                        : 'text-gray-300'
+                                                }`}
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
                                 <div className="flex items-center gap-2">
-                                    <span className="font-medium">{review.name}</span>
-                                    <span className="text-gray-500">· {review.location}</span>
-                                    {review.isVerified && (
-                                        <span className="flex items-center gap-1 text-green-600">
-                                            <Verified className="w-4 h-4" />
-                                            <span className="text-sm">Verified</span>
-                                        </span>
-                                    )}
-                                </div>
-                                <div className="flex mt-2">
-                                    {[...Array(5)].map((_, i) => (
-                                        <Star
-                                            key={i}
-                                            className={`w-4 h-4 ${
-                                                i < review.rating
-                                                    ? 'text-yellow-400 fill-yellow-400'
-                                                    : 'text-gray-300'
-                                            }`}
-                                        />
-                                    ))}
+                                    <div className="text-sm text-gray-500">
+                                        {new Date(review.date).toLocaleDateString()}
+                                    </div>
+                                    <ChevronDown 
+                                        className={`w-5 h-5 transition-transform ${
+                                            openReviews.has(index) ? 'rotate-180' : ''
+                                        }`}
+                                    />
                                 </div>
                             </div>
-                            <div className="text-sm text-gray-500">
-                                {new Date(review.date).toLocaleDateString()}
-                            </div>
-                        </div>
+                            
+                            {review.title && (
+                                <h3 className="font-medium mt-4">{review.title}</h3>
+                            )}
+                            <p className="text-gray-600 mt-2">
+                                {openReviews.has(index) ? review.content : previewContent}
+                                {isLongContent && !openReviews.has(index) && (
+                                    <span 
+                                        className="text-blue-500 ml-1"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            setOpenReviews(prev => new Set([...prev, index]));
+                                        }}
+                                    >
+                                        Read more
+                                    </span>
+                                )}
+                            </p>
+                        </button>
                         
-                        {review.title && (
-                            <h3 className="font-medium mt-4">{review.title}</h3>
+                        {openReviews.has(index) && (
+                            <div className="px-6 pb-6 border-t border-gray-100 pt-4">
+                                <div className="text-sm text-gray-500">
+                                    Experience date: {review.experienceDate}
+                                </div>
+                            </div>
                         )}
-                        <p className="text-gray-600 mt-2">{review.content}</p>
-                        
-                        <div className="mt-4 text-sm text-gray-500">
-                            Experience date: {review.experienceDate}
-                        </div>
                     </div>
-                ))}
+                )})}
             </div>
         </div>
     );
