@@ -19,7 +19,6 @@ const reviews = [
         rating: 5,
         date: "20 Oct 2024",
         content: "Phenomenal CBT Therapist! Richard is a kind, compassionate and empathetic therapist who instinctively knows how to put you at ease. Having never done therapy before, I started the process with all kinds of doubt, fear and trepidation – almost looking for the nearest exit before I’d begun! Yet, guided by Richard’s warmth and humour, all my scepticism quickly melted away. I soon felt the healing power of being able to talk freely in a safe space. A great listener, Richard was able to make fantastic suggestions for books, diaries and other tools which I found invaluable in between sessions as a means of reflection and personal growth. Ultimately, and after only a few sessions, I now feel like me again; ready to move forward with an open heart and a sense of optimism for the future, safe in the knowledge that I am better equipped to deal with life’s challenges. Richard is a truly gifted therapist with a generous spirit. I sincerely hope that others allow themselves the opportunity and privilege of collaborating with him on their own personal journey. I honestly can’t recommend him highly enough! Thank you so much Richard for all your help and support.",
-        date: "20 October 2024"
     },
     {
         name: "Ali Jarvis",
@@ -27,7 +26,6 @@ const reviews = [
         rating: 5,
         date: "16 Sept 2024",
         content: "I cannot recommend Richard highly enough. I was referred for therapy to address my anxiety which was having a massively negative impact on my life. Whilst I was not an all out sceptic of holistic therapies, at the start I struggled to see how this therapy could or would be able to help me. With Richard’s guidance and wonderfully wicked sense of humour, the onion of futile resistance has been well and truly smashed! Thanks to Richard I have my life back and feel suitably equipped to continue improving every day with the safety net of being able to reach out to Richard in the future should I need to.",
-        date: "13 September 2024"
     },
     {
         name: "Lydia McManus",
@@ -35,7 +33,6 @@ const reviews = [
         rating: 5,
         date: "30 Aug 2024",
         content: "I honestly cannot recommend Richard enough!! I had 8 sessions all together and I can feel so much of a difference. I have gained a lot from my sessions, from insights, tools, recommendations and more. There have been many occasions where I have experienced light bulb moments that have been life changing and make me understand so much. Richard is understanding, empathetic and has a calming presence. He also has a great sense of humour that has put me at ease from my first session, being able to laugh throughout sessions is something I was so grateful for. Richard creates a safe environment in which you can truly open up and gain a lot from. Thank you for everything!",
-        date: "30 August 2024"
     },
     {
         name: "Lauren Rebecca",
@@ -43,15 +40,13 @@ const reviews = [
         rating: 5,
         date: "10 Aug 2024",
         content: "I was referred to Richard for therapy for my OCD. I found his guidance really helpful in explaining concepts for ACT therapy and allowing me to work on my symptoms. Even though some sessions were tough for me mentally, Richard always found a way to make the concepts relatable or a way to divert the conversation to help me calm down (and mostly laugh) before returning to the topic.",
-        date: "10 August 2024"
-    },
+        },
     {
         name: "Sarah",
         location: "GB",
         rating: 5,
         date: "3 Jun 2024",
         content: "The whole theory behind does it help!! Well absolutely, yes! Richard has been an enormous help, guidance and support throughout my sessions and comes highly recommended by myself and others no doubt. I will carry on believing in myself and trusting each step I take is a plan to strive to achieve my potential that I had lost and thanks to Richard I have now and will continue gaining. Thank you, wholeheartedly.",
-        date: "03 June 2024"
     },
     {
         name: "Nafiya",
@@ -59,7 +54,6 @@ const reviews = [
         rating: 5,
         date: "4 Jun 2024",
         content: "Many people have told me therapy is a waste of time and I grew up believing in this! Since starting my sessions with Richard, I have found the confident , strong powerful woman I forgot I was especially during my most anxious times. I felt extremely comfortable sharing feelings and thoughts, I felt I could benefit from many strategies we spoke about, he was very professional yet friendly enough to crack a few jokes which was fantastic. Thank you Richard!",
-        date: "04 June 2024"
     },
     {
         name: "Anonymous",
@@ -67,15 +61,13 @@ const reviews = [
         rating: 5,
         date: "7 Jun 2024",
         content: "Richard’s guidance, support and insights really resonate. You can take something out of every session, which in turn helps you make gradual changes in your life. In other words, a life-changing experience. Thank you so much!",
-        date: "05 June 2024"
-    },
+        },
     {
         name: "Aureliana Enache",
         location: "GB",
         rating: 5,
         date: "4 Jun 2024",
         content: "Rick is a very gifted, empathetic and highly professional therapist. A meditator, so the holding and advice comes from an intuitive, spiritual space. If you want to discuss situations in depth, clear out emotions at the somatic level or find better life strategies, definitely book with Rick Hallett.",
-        date: "04 June 2024"
     },
     {
         name: "Mary",
@@ -83,23 +75,20 @@ const reviews = [
         rating: 5,
         date: "8 Jun 2024",
         content: "I have benefitted immensely from my sessions with Richard and feel lighter in the mind, body, and soul. He is a professional and a well-mannered therapist, who was able to create a safe space emotionally and mentally so I could open up and speak. Especially as a trauma-informed therapist; he was sympathetic, empathetic and non-judgemental in his approach. In this manner we proceeded through the traumas that can leave one feeling frozen. Furthermore, experiencing symptoms such as: emotional and physical pain throughout the body; depression, anxiety, insomnia, numbness, disassociation, isolation, fear, heartbreak, grief and many more indicators. Richard aided me through the darkness to a place where one can see light, he is a source for good change guiding one within, through some of the darkest wounds; I would not have favored to face alone, and did not know how to. He aided me with psychology terms and knowledge to explain my states and what was happening—which is essence was a therapeutic and educational process... do trust the process.",
-        date: "07 June 2024"
-    },
+        },
     {
         name: "Barry J Wale",
         location: "GB",
         rating: 5,
         date: "3 Jun 2024",
         content: "My experience talking to Richard was truly enlightening. Together we found a way forward, and I am deeply in his debt. An intelligent listener with great compassion and understanding of the human mind.",
-        date: "14 March 2024"
-    },
+            },
     {
         name: "alfie",
         location: "GB",
         rating: 5,
         date: "15 Aug 2024",
         content: "Having come to Richard with dark intrusive thoughts about harming other loved ones and a truly crazy high score of OCD after nearly 2 years of suffering with the symptoms of this sometimes needing to be scared of even the most basic daily tasks, spending the 6 sessions with Richard working on where these stem from, how to overcome these and break these down, what these truly mean and how meditation and workbooks can make a huge difference when suffering from Harm OCD, Richard and myself have worked session by session to channel this into where I am today with little to no strange thoughts these days, and life’s a much brighter place to be. Sessions have been entertaining as well as insightful, I really could not have done this without Richard. By far the best therapist I have had coming off the back of CBT and reconstructive thought therapy, doing the ERP therapy with Richard really has made such a difference, could not recommend Richard highly enough and such a great guy!",
-        date: "15 August 2024"
     },
 ]
 
