@@ -4,6 +4,7 @@ import { Route, Routes, BrowserRouter as Router } from 'react-router-dom'
 import Home from './pages/Home'
 import Approach from './components/home/Approach'
 import Journey from './components/home/Journey'
+import WorkTogether from './components/home/WorkTogether'
 import './styles/index.css'
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/journey" element={<Journey />} />
           <Route path="/approach" element={<Approach />} />
-          <Route path="/work-together" element={<div className="p-8">Work Together Page</div>} />
+          <Route path="/work-together" element={<WorkTogether />} />
           <Route path="/contact" element={<div className="p-8">Contact Page</div>} />
           <Route path="/privacy" element={<div className="p-8">Privacy Policy Page</div>} />
           <Route path="/terms" element={<div className="p-8">Terms of Service Page</div>} />

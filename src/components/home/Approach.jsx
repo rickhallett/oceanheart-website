@@ -5,9 +5,9 @@ const approachPoints = [
         title: "Beyond Traditional Therapy",
         content: [
             "This isn't traditional therapy.",
-            "We won't analyze your past endlessly.",
-            "We won't try to fix your thoughts.",
-            "We won't give you techniques to control your feelings."
+            "I won't analyze your past endlessly.",
+            "I won't try to fix your thoughts.",
+            "I won't give you techniques to control your feelings."
         ]
     },
     {
@@ -86,17 +86,17 @@ const Approach = () => {
                         {/* Subtle gradient overlay */}
                         <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-white opacity-30 pointer-events-none" />
 
-                        <div className="grid md:grid-cols-2 gap-12 relative">
+                        <div className="grid md:grid-cols-2 gap-12 relative text-center">
                             {approachPoints.map((section, index) => (
-                                <div key={index} className="space-y-6">
-                                    <h3 className="text-2xl font-medium text-brand-500">
+                                <div key={index} className="space-y-6 text-center">
+                                    <h3 className="text-xl font-medium text-brand-500">
                                         {section.title}
                                     </h3>
                                     <ul className="space-y-4">
                                         {(section.content || section.points)?.map((point, idx) => (
                                             <li key={idx} className="flex items-start">
                                                 <span className="mr-3 text-brand-500">•</span>
-                                                <span className="text-neutral-600">{point}</span>
+                                                <span className="text-neutral-600 text-left">{point}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -114,14 +114,15 @@ const Approach = () => {
                         {/* Subtle gradient overlay */}
                         <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-white opacity-30 pointer-events-none" />
 
-                        <h3 className="text-2xl font-medium font-bold text-neutral-900 mb-8 text-center">
-                            This is for you if:
-                        </h3>
+                        
                         <div className="grid md:grid-cols-2 gap-12">
                             {/* Positive points */}
                             <div className="space-y-4">
+                            <h3 className="text-xl font-medium text-brand-500 text-center">
+                                        This is for you if
+                                    </h3>
                                 {forYou.positive.map((point, index) => (
-                                    <div key={index} className="flex items-start">
+                                    <div key={index} className="flex ">
                                         <span className="mr-3 text-brand-500">✓</span>
                                         <span className="text-neutral-600">{point}</span>
                                     </div>
@@ -129,9 +130,11 @@ const Approach = () => {
                             </div>
                             {/* Negative points */}
                             <div className="space-y-4">
-                                <p className="font-medium text-neutral-900 mb-4">This isn't for you if:</p>
+                            <h3 className="text-xl font-medium text-brand-500 text-center">
+                                        This isn't for you if
+                                    </h3>
                                 {forYou.negative.map((point, index) => (
-                                    <div key={index} className="flex items-start">
+                                    <div key={index} className="flex ">
                                         <span className="mr-3 text-neutral-400">×</span>
                                         <span className="text-neutral-500">{point}</span>
                                     </div>

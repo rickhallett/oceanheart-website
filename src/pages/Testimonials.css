@@ -1,0 +1,41 @@
+.work-together {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .review-slide {
+    padding: 1rem;
+    padding-bottom: 3rem;
+    /* background: #f9f9f9; */
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  
+  .review-content {
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .review-author {
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  .read-more-link {
+    color: #007bff;
+    text-decoration: underline;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+
+.carousel .control-dots {
+    transform: translate(0, 15px); 
+}
+
+.carousel .control-dots .dot {
+    background: #0087ff;
+    width: 10px;
+    height: 10px;
+
+}

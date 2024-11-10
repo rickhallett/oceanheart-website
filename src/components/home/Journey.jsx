@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import oceanheartImage from '../../assets/oceanheart-raw.jpeg';
 
 const Journey = () => {
     const containerVariants = {
@@ -34,17 +35,33 @@ const Journey = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    className="space-y-20"
+                    className="space-y-10"
                 >
                     {/* My Journey Section */}
                     <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto">
                         <h2 className="text-4xl md:text-5xl font-medium font-bold text-neutral-900 mb-8">
                             My Journey
                         </h2>
-                        <p className="text-xl text-neutral-600 leading-relaxed">
+                        {/* Centered Image */}
+                        <div className="flex justify-center mb-8">
+                            <div className="relative">
+                                <img
+                                    src={oceanheartImage}
+                                    alt="Ocean Heart"
+                                    className="rounded-full border border-white shadow-lg"
+                                    style={{
+                                        width: '300px',
+                                        height: '300px',
+                                        objectFit: 'cover',
+                                        boxShadow: '0 0 15px rgba(255, 255, 255, 0.5)',
+                                    }}
+                                />
+                            </div>
+                        </div>
+                        <p className="text-md text-neutral-600 leading-relaxed">
                             I've walked this path. Through addiction, through the endless loops of thinking, through the exhausting search for answers. What I found wasn't another technique or theory. It was a fundamental shift in how I meet life.
                         </p>
-                        <p className="mt-6 text-xl text-neutral-600 leading-relaxed">
+                        <p className="mt-6 text-md text-neutral-600 leading-relaxed">
                             This work is born from lived experience, from falling and rising, from discovering what lies beyond the mind's solutions. From finding freedom not in perfection, but in authenticity.
                         </p>
                     </motion.div>
@@ -57,7 +74,7 @@ const Journey = () => {
                         <h3 className="text-3xl font-medium text-center text-brand-500 mb-8">
                             What's Possible
                         </h3>
-                        <ul className="space-y-4 text-lg text-neutral-600">
+                        <ul className="space-y-4 text-md text-neutral-600">
                             <li className="flex items-center justify-center text-center">
                                 <span className="mr-3 text-brand-500">•</span>
                                 Living from your heart instead of your head

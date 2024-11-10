@@ -32,7 +32,7 @@ const Header = () => {
             <div className="flex-shrink-0">
               <Link to="/" className="flex items-center gap-1">
                 <span className="text-2xl font-bold text-brand-500">O.</span>
-                <span className="text-lg font-medium text-neutral-900">OceanHeart</span>
+                {/* <span className="text-lg font-medium text-neutral-900">oceanheart.ai</span> */}
               </Link>
             </div>
 
